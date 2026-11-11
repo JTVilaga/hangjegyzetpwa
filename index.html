@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="ikon/ikon-192.png">
+  <link rel="apple-touch-icon" href="ikon/ikon-192.png">
+  <meta name="generator" content="JT AppKreator 2.7.28">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-jtak-teljes>
+  <meta name="theme-color" content="#5b3fa0">
+  <title>Hangjegyzet</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="jtak-teljes.js"></script>
+  <script src="jtak-felolvas.js" charset="utf-8"></script>
+</head>
+<body>
+  <header class="fejlec">
+    <h1>🎙 Hangjegyzet</h1>
+    <span id="verzio" class="halvany"></span>
+  </header>
+
+  <main>
+    <section class="kartya">
+      <label for="szoveg" class="cimke">Új jegyzet</label>
+      <div class="szoveg-keret">
+        <textarea id="szoveg" rows="6" placeholder="Írj ide, vagy nyomd meg a Diktálás gombot, és mondd."></textarea>
+        <div id="felugroJelzes" class="figyel" hidden>
+          <div class="figyel-ful">👂</div>
+          <div class="figyel-cim">Figyelek – beszélj!</div>
+          <div class="figyel-segit">Ha végeztél, koppints bárhová.<br>A szöveg utána jelenik meg.</div>
+        </div>
+      </div>
+
+      <div class="gombok">
+        <button type="button" id="diktalGomb" class="gomb gomb-diktal">🗣 Diktálás</button>
+        <button type="button" id="felvetelGomb" class="gomb gomb-felvetel">⏺ Hangfelvétel</button>
+      </div>
+      <label id="helybenSor" class="jelolo" hidden><input type="checkbox" id="helybenJelolo"> Diktálás internet nélkül</label>
+      <p id="allapot" class="allapot" aria-live="polite"></p>
+
+      <div id="hangElonezet" class="hang-elonezet" hidden>
+        <audio id="hangLejatszo" controls></audio>
+        <button type="button" id="hangElvet" class="gomb gomb-kicsi">✕ Elvetem</button>
+      </div>
+
+      <div class="gombok">
+        <button type="button" id="mentGomb" class="gomb gomb-fo">💾 Jegyzet mentése</button>
+        <button type="button" id="uritGomb" class="gomb gomb-masod">Üres</button>
+      </div>
+    </section>
+
+    <section class="kartya">
+      <h2>Jegyzeteim <span id="db" class="halvany"></span></h2>
+      <div id="lista" class="lista"></div>
+    </section>
+
+    <section class="kartya halvany kicsi">
+      <p><b>Diktálás:</b> élőben szövegbe írja, amit mondasz. Egy szünet után magától folytatja, amíg újra meg nem nyomod a gombot.</p>
+      <p id="offlineSugo" hidden></p>
+      <p><b>Hangfelvétel:</b> külön jegyzet; a listában meghallgatható, és fájlba menthető (Dokumentumok/Hangjegyzet).</p>
+      <p><b>Felolvasás:</b> a 🔊 gomb hangosan felolvassa a jegyzetet; újra megnyomva leáll.</p>
+      <p><b>Mentés fájlba:</b> a diktált vagy írt jegyzet szövegfájlba (.txt) kerül: Dokumentumok/Hangjegyzet-Jegyzetek.</p>
+      <p id="kornyezet"></p>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <p class="jtak-keszult" style="text-align:center;font:12px/1.4 system-ui,sans-serif;opacity:.6;margin:16px 0">Készült a JT AppKreatorral</p>
+  <script src="js/telepites.js"></script>
+</body>
+</html>
